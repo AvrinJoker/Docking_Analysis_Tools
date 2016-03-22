@@ -1,7 +1,8 @@
-Receptor,4EFU
+Receptor,MAP4K4
 Measure,RMSD
 min-cross,0.45,0.01
 align-cross,0.4,0.04
 dock-cross,0.35,0.02
 align-close,0.7,0.05
 dock-close,0.6,0.04
+p-value,0.03,3,4
