@@ -27,7 +27,7 @@ def overall_best(infile, outfile):
     x = [x for x in range(len(y_value))]
 
     # add error bar
-    ax.errorbar(x,y_value, yerr=y_error, ecolor= 'k', capthick=2, fmt=None, capsize=3, elinewidth=2, markeredgewidth=1)
+    ax.errorbar(x,y_value, yerr=y_error, ecolor='k', capthick=2, fmt=None, capsize=3, elinewidth=2, markeredgewidth=1)
     ax.scatter(x, y_value, facecolor='k', s=100, linewidths=0, alpha=0.8)
     
     # set the axises & format the fig

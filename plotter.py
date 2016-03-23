@@ -12,8 +12,13 @@ from methods_plotter import *
 
 from overall_best import *
 
+from RMSD_formating import *
+
 CONTEXT_SETTINGS = dict(help_option_names=['-h','--help'])
 
-#methods_plotter('example_MAP4K4_RMSD.csv')
+#RMSD_formating('MAP4K4/')
 
-overall_best('example_methods_RMSD.csv','orange.png')
+methods_plotter('example_MAP4K4_RMSD.csv','apple.png')
+
+#overall_best('example_methods_RMSD.csv','orange.png')
+

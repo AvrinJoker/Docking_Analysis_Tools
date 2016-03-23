@@ -1,8 +1,8 @@
 Receptor,MAP4K4
 Measure,RMSD
-min-cross,0.45,0.01
-align-cross,0.4,0.04
-dock-cross,0.35,0.02
-align-close,0.7,0.05
-dock-close,0.6,0.04
-p-value,0.03,3,4
+min-cross,0.499229,0.023409
+align-cross,0.499714,0.023593
+dock-cross,0.395514,0.023077
+align-close,0.448143,0.023901
+dock-close,0.263457,0.020882
+p-value,0.000000,1,3

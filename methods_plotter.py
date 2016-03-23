@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-def methods_plotter(infile,figsize=(4,3),outfile='apple.png'):
+def methods_plotter(infile,outfile='apple.png',figsize=(4,3)):
     '''plotting methods comparison
     
     methods include (1)min_cross, (2)align_cross, (3)dock_cross, (4)align_close, (5)dock_close
@@ -16,8 +16,7 @@ def methods_plotter(infile,figsize=(4,3),outfile='apple.png'):
         x_label = [x[0] for x in value]
         err_value = [float(x[2]) for x in value]
         p = l[-1]
-        p_label = 'p=%s'%p[1]
-        p = [p_label, int(p[2]),int(p[3])]
+        p = [float(p[1]), int(p[2]),int(p[3])]
         return rec_name, measure_name, x_value, x_label, err_value, p
     
     # get plotting data from file
@@ -40,11 +39,17 @@ def methods_plotter(infile,figsize=(4,3),outfile='apple.png'):
     plt.xticks(rotation='vertical')
     
     # mark the x value
+    x_value = [float('%.3f'%x) for x in x_value]
     for i in range(len(x_value)):
         ax.annotate(x_value[i], xy=(i,x_value[i]-err_value[i]-0.07),ha='center',fontsize=8, color='g')
     
     # draw the p value label & connection line
-    ax.annotate(p[0], xy=(0.5*p[1]+0.5*p[2],0.1+max(x_value[p[1]]+err_value[p[1]],x_value[p[2]]+err_value[p[2]])), ha='center', fontsize=8, alpha=0.8)
+    if p[0] < 0.001:
+        p_label = 'p < 0.001'
+    else:
+        p_label = 'p = %.4f'%p[0]
+
+    ax.annotate(p_label, xy=(0.5*p[1]+0.5*p[2],0.15+max(x_value[p[1]]+err_value[p[1]],x_value[p[2]]+err_value[p[2]])), ha='center', fontsize=8, alpha=0.8)
     ax.annotate('',xy=(p[1],err_value[p[1]]+x_value[p[1]]), xytext=(p[2],err_value[p[2]]+x_value[p[2]]), arrowprops=dict(arrowstyle='-',connectionstyle='bar,angle=180'))
     
     # save figure
