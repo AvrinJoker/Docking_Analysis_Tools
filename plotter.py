@@ -16,7 +16,7 @@ from RMSD_formating import *
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h','--help'])
 
-#RMSD_formating('MAP4K4/')
+RMSD_formating('MAP4K4/','example_MAP4K4_RMSD.csv')
 
 methods_plotter('example_MAP4K4_RMSD.csv','apple.png')
 
