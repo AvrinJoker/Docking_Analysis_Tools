@@ -1,0 +1,12 @@
+Measure,RMSD
+ABL1,dock_close,0.5,0.02
+ACES,align_close,0.35,0.03
+AKT1,align_cross,0.45,0.05
+AMPC,align_close,0.6,0.08,align_cross,0.55,0.06
+ANDR,dock_close,0.53,0.02
+BACE1,align_close,0.64,0.01,dock_cross,0.6,0.03
+BRAF,min_cross,0.39,0.02,align_close,0.39,0.04,align_cross,0.38,0.03
+CASP3,dock_cross,0.26,0.04,
+CDK2,dock_close,0.7,0.05
+CSF1R,align_close,0.88,0.04
+DPP4,align_close,0.44,0.02

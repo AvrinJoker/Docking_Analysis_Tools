@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-def methods_plotter(infile,figsize=(4,3)):
+def methods_plotter(infile,figsize=(4,3),outfile='apple.png'):
     '''plotting methods comparison
     
     methods include (1)min_cross, (2)align_cross, (3)dock_cross, (4)align_close, (5)dock_close
@@ -24,8 +24,8 @@ def methods_plotter(infile,figsize=(4,3)):
     rec_name, measure_name, x_value, x_label, err_value, p = _infile_parser(infile)
 
     # set figure basic info
-    fig = plt.figure(figsize=figsize,dpi=300)
-    ax = fig.add_subplot(111, ylim=(0,1))
+    fig = plt.figure(figsize=figsize,dpi=600)
+    ax = fig.add_subplot(111, ylim=(0,1), xlim=(-1,len(x_value)))
     x = [x for x in range(len(x_value))]
     
     # add error bar & plot the methods
@@ -45,8 +45,8 @@ def methods_plotter(infile,figsize=(4,3)):
     
     # draw the p value label & connection line
     ax.annotate(p[0], xy=(0.5*p[1]+0.5*p[2],0.1+max(x_value[p[1]]+err_value[p[1]],x_value[p[2]]+err_value[p[2]])), ha='center', fontsize=8, alpha=0.8)
-    ax.annotate('',xy=(p[1],err_value[p[1]]+x_value[p[1]]), xytext=(p[2],err_value[p[2]]+x_value[p[2]]), arrowprops=dict(arrowstyle='-',connectionstyle='bar,angle=180'),alpha=0.8)
+    ax.annotate('',xy=(p[1],err_value[p[1]]+x_value[p[1]]), xytext=(p[2],err_value[p[2]]+x_value[p[2]]), arrowprops=dict(arrowstyle='-',connectionstyle='bar,angle=180'))
     
     # save figure
     #plt.show()
-    plt.savefig('apple.png',dpi=300,bbox_inches='tight')
+    plt.savefig(outfile,dpi=600,bbox_inches='tight')

@@ -8,9 +8,12 @@ import matplotlib.pyplot as plt
 
 import click
 
-import methods_plotter
+from methods_plotter import *
+
+from overall_best import *
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h','--help'])
 
-methods_plotter.methods_plotter('example.csv')
+#methods_plotter('example_MAP4K4_RMSD.csv')
 
+overall_best('example_methods_RMSD.csv','orange.png')
