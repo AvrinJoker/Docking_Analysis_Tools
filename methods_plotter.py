@@ -48,10 +48,9 @@ def methods_plotter(infile,outfile='apple.png',figsize=(4,3)):
         p_label = 'p < 0.001'
     else:
         p_label = 'p = %.4f'%p[0]
-
-    ax.annotate(p_label, xy=(0.5*p[1]+0.5*p[2],0.15+max(x_value[p[1]]+err_value[p[1]],x_value[p[2]]+err_value[p[2]])), ha='center', fontsize=8, alpha=0.8)
-    ax.annotate('',xy=(p[1],err_value[p[1]]+x_value[p[1]]), xytext=(p[2],err_value[p[2]]+x_value[p[2]]), arrowprops=dict(arrowstyle='-',connectionstyle='bar,angle=180'))
-    
+    fraction = 0.4*(p[2]-p[1])/abs(p[1]-p[2])
+    ax.annotate(p_label, xy=(0.5*p[1]+0.5*p[2],0.14+max(x_value[p[1]]+err_value[p[1]],x_value[p[2]]+err_value[p[2]])), ha='center', fontsize=8, alpha=0.8)
+    ax.annotate('',xy=(p[1],err_value[p[1]]+x_value[p[1]]), xytext=(p[2],err_value[p[2]]+x_value[p[2]]), arrowprops=dict(arrowstyle='-',connectionstyle='bar,angle=-180,fraction=%f'%fraction))
     # save figure
     #plt.show()
     plt.savefig(outfile,dpi=600,bbox_inches='tight')

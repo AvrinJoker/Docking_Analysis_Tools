@@ -14,11 +14,18 @@ from overall_best import *
 
 from RMSD_formating import *
 
+from IC50_formating import *
+
+
 CONTEXT_SETTINGS = dict(help_option_names=['-h','--help'])
 
-RMSD_formating('MAP4K4/','example_MAP4K4_RMSD.csv')
+#RMSD_formating('MAP4K4/','example_MAP4K4_RMSD.csv')
 
 methods_plotter('example_MAP4K4_RMSD.csv','apple.png')
 
 #overall_best('example_methods_RMSD.csv','orange.png')
 
+#IC50_formating('MAP4K4/','example_MAP4K4_IC50.csv','example_MAP4K4_R2.csv')
+
+methods_plotter('example_MAP4K4_IC50.csv','strawberry.png')
+methods_plotter('example_MAP4K4_R2.csv','pear.png')

@@ -1,0 +1,8 @@
+Receptor,MAP4K4
+Measure,SPM_IC50
+min-cross,0.652080,0.060511
+align-cross,0.681235,0.044245
+dock-cross,0.569159,0.072982
+align-close,0.191703,0.084940
+dock-close,0.268312,0.084227
+p-value,0.000000,1,0
