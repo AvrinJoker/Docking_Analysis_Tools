@@ -4,9 +4,6 @@
 
 import os
 
-import matplotlib.pyplot as plt
-
-import click
 
 from methods_plotter import *
 
@@ -17,15 +14,17 @@ from RMSD_formating import *
 from IC50_formating import *
 
 
-CONTEXT_SETTINGS = dict(help_option_names=['-h','--help'])
+def target_analysis(target,dire):
+    os.system('mkdir %s/%s/'%(dire,target))
+    RMSD_formating('%s/'%target,'%s/%s/%s_RMSD.csv'%(dire,target,target))
+    methods_plotter('%s/%s/%s_RMSD.csv'%(dire,target,target),'%s/figures/%s_RMSD.png'%(dire,target))
+    #IC50_formating('%s/'%target,'%s/%s/%s_SPM.csv'%(dire,target,target),'%s/%s/%s_R2.csv'%(dire,target,target))
+    #methods_plotter('%s/%s/%s_SPM.csv'%(dire,target,target),'%s/figures/%s_SPM.png'%(dire,target))
+    #methods_plotter('%s/%s/%s_R2.csv'%(dire,target,target),'%s/figures/%s_R2.png'%(dire,target))
 
-#RMSD_formating('MAP4K4/','example_MAP4K4_RMSD.csv')
 
-methods_plotter('example_MAP4K4_RMSD.csv','apple.png')
+#os.system('mkdir rst/')
+#os.system('mkdir rst/figures/')
+#target_analysis('MAP4K4','./rst')
+overall_best('example_methods_RMSD.csv','orange.png')
 
-#overall_best('example_methods_RMSD.csv','orange.png')
-
-#IC50_formating('MAP4K4/','example_MAP4K4_IC50.csv','example_MAP4K4_R2.csv')
-
-methods_plotter('example_MAP4K4_IC50.csv','strawberry.png')
-methods_plotter('example_MAP4K4_R2.csv','pear.png')

@@ -1,0 +1,3 @@
+Measure,RMSD
+MAP4K4,min-cross,0.500457,0.023763,align-cross,0.500314,0.025167
+ABL1,dock-cross,0.627419,0.025390

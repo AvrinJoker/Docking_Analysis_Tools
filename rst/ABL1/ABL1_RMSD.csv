@@ -1,0 +1,8 @@
+Receptor,/net/pier/home/camacho/zhy44/Cases/ABL1
+Measure,RMSD
+min-cross,0.208710,0.020328
+align-cross,0.265516,0.023298
+dock-cross,0.627419,0.025390
+align-close,0.088452,0.015248
+dock-close,0.588387,0.026687
+p-value,0.000000,2,4

@@ -1,0 +1,8 @@
+Receptor,MAP4K4
+Measure,R2_IC50
+min-cross,0.560228,0.065948
+align-cross,0.461171,0.088450
+dock-cross,0.395561,0.074737
+align-close,0.143130,0.056559
+dock-close,0.172735,0.064807
+p-value,0.000000,0,1

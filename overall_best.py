@@ -47,3 +47,6 @@ def overall_best(infile, outfile):
     # save figure
     plt.savefig(outfile,dpi=600,bbox_inches='tight')
 
+
+if __name__=='__main__':
+    overall_best('test.csv', 'overall.png')
